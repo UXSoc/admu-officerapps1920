@@ -1,20 +1,37 @@
 * { outline: red; }
 
 body {
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, Helvetica,
+  font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, Helvetica,
     "Helvetica Neue", "Roboto", sans-serif;
-  background: #ffffff;
+  background: #fbfbfb;
   margin: 0px;
-  padding-bottom: 200px;
+  color: #828282;
+}
+
+/* font */
+@font-face {
+  font-family: Proxima Nova;
+  src: url('./font/ProximaNova-Regular.otf');
+  font-weight: normal;
+}
+@font-face {
+  font-family: Proxima Nova;
+  src: url('./font/Proxima-Nova-Thin.otf');
+  font-weight: 300;
+}
+@font-face {
+  font-family: Proxima Nova;
+  src: url('./font/Proxima-Nova-Semibold.otf');
+  font-weight: bold;
 }
 
 /* HEADER */
 .header {
-  background-color: #29a4fd;
+  background-color: #8400c7;
   display: flex;
   align-items: center;
-  border-radius: 3px;
   padding: 18px 32px;
+  border-radius: 0px 0px 3px 3px;
 }
 
 .header__logo-container {
@@ -31,6 +48,7 @@ body {
   font-size: 18px;
   letter-spacing: 0.05em;
   color: white;
+font-family: Proxima Nova;
   font-weight: bold;
 }
 
@@ -40,13 +58,14 @@ body {
   color: white;
   text-decoration: none;
   font-size: 16px;
+font-family: Proxima Nova;
   letter-spacing: 0.05em;
   border: 2px solid white;
   border-radius: 4px;
   padding: 7px 12px;
 }
 
-/* END HEADER */
+.footer { background: #4F4F4F; color: white; padding: 17px; font: 14px Proxima Nova; letter-spacing: 5%; padding-left: 10%; }
 
 /* MAIN */
 
@@ -55,26 +74,25 @@ main {
   flex-direction: column;
   align-items: center;
   padding-top: 107px;
-}
-
-.main__image {
-  margin: 0 auto;
+  padding-bottom: 107px;
 }
 
 .main__spiel {
   color: #828282;
-  letter-spacing: 0.05em;
-  text-align: left;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 50px;
-  max-width: 900px;
-  margin-top: 55px;
+font-family: proxima nova; font-size: 18px; line-height: 40px; text-align: center; width: 70%;
+letter-spacing: 0.05em;
 }
 
-.main__spiel--blue {
-  color: #29a4fd;
+.main__spiel--purple {
+  color: #8400c7;
 }
+
+main h1 { font-family: Proxima Nova;
+font-size: 15px;
+line-height: 50px;margin: 0px;
+text-align: center;
+letter-spacing: 0.05em;
+color: #8400c7; font-weight: bold; }
 
 .position {
   margin-top: 130px;
