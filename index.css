@@ -94,6 +94,42 @@ text-align: center;
 letter-spacing: 0.05em;
 color: #8400c7; font-weight: bold; }
 
+.tabs{
+  margin: 40px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template: auto;
+  box-sizing: border-box;
+}
+
+.tabs a{
+  font-family: Proxima Nova;
+  width: 80%;
+  margin: auto;
+  border: 1px solid #8400c7;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #8400c7;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.tabs a:hover{
+  cursor: pointer;
+  background-color: #8400c7;
+  color: white;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 740px) {
+  
+  .tabs a{
+    font-size: 10px;
+  }
+}
+
+
 .position {
   margin-top: 130px;
   max-width: 760px;
