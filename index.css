@@ -122,10 +122,15 @@ color: #8400c7; font-weight: bold; }
   font-weight: bold;
 }
 
-@media only screen and (max-width: 740px) {
-  
+@media only screen and (max-width: 1000px) {
+  .tabs{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
   .tabs a{
     font-size: 10px;
+    margin-top: 20px;
+    text-align: center;
   }
 }
 
