@@ -74,11 +74,19 @@
           Interested? Don&lsquo;t forget to apply!
         </p>
 
-      <div class="dep-tabs">
-        <input name="dep-tab" type="radio" id="dep-1" checked="checked" class="input"/>
-        <label for="dep-1" class="label dep1">Design and Consultancy</label>
-        <div class="dep-panel">
-          <!-- uxdc -->
+        <!-- Tab links -->
+        <div class="dept-tabs-flow"><div class="dept-tabs">
+          <button class="dept-tablinks" onclick="openDept(event, 'dept-1')">Design & Consultancy</button>
+          <button class="dept-tablinks" onclick="openDept(event, 'dept-2')">Web Development</button>
+          <button class="dept-tablinks" onclick="openDept(event, 'dept-3')">Branding</button>
+          <button class="dept-tablinks" onclick="openDept(event, 'dept-4')">Content Marketing</button>
+          <button class="dept-tablinks" onclick="openDept(event, 'dept-5')">Human Resources</button>
+          <button class="dept-tablinks" onclick="openDept(event, 'dept-6')">Events</button>
+          <button class="dept-tablinks" onclick="openDept(event, 'dept-7')">Finance</button>
+        </div></div>
+
+          <div id="dept-1" class="dept-panel" id="defaultOpen">
+            <!-- uxdc -->
           <div class="department-container">
             <header class="department-main-header">📝 Design & Consultancy</header>
             <p>We are the core of UXSoc that advocates the practice of user experience.
@@ -128,7 +136,7 @@
                     process from the ground up.</p>
               </div>
               <div class="department-info-card">
-                  <header class="department-information-header">Montly Workshops</header>
+                  <header class="department-information-header">Monthly Workshops</header>
                   <p>UXSoc’s annual flagship event that aims to promote UX, its use, and impact to
                      various demographics by allowing people from the design industry to share their
                       knowledge and expertise. This year, we’re holding a 1-day design conference and workshop!</p>
@@ -142,9 +150,7 @@
           </div></div>
         </div>
 
-        <input name="dep-tab" type="radio" id="dep-2" class="input"/>
-        <label for="dep-2" class="label">Web Development</label>
-        <div class="dep-panel">
+        <div id="dept-2" class="dept-panel">
           <!-- dev -->
           <div class="department-container">
             <header class="department-main-header">💻 Web Development</header>
@@ -185,9 +191,7 @@
           </div></div>
         </div>
 
-        <input name="dep-tab" type="radio" id="dep-3" class="input"/>
-        <label for="dep-3" class="label">Branding</label>
-        <div class="dep-panel">
+        <div id="dept-3" class="dept-panel">
           <!-- branding -->
           <div class="department-container">
             <header class="department-main-header">🎨 Branding</header>
@@ -230,9 +234,7 @@
           </div></div>
         </div>
 
-        <input name="dep-tab" type="radio" id="dep-4" class="input"/>
-        <label for="dep-4" class="label">Content Marketing</label>
-        <div class="dep-panel">
+        <div id="dept-4" class="dept-panel">
           <!-- content mktg -->
           <div class="department-container">
             <header class="department-main-header">📝 Content Marketing</header>
@@ -288,9 +290,7 @@
           </div></div>
         </div>
 
-        <input name="dep-tab" type="radio" id="dep-5" class="input"/>
-        <label for="dep-5" class="label">Human Resources</label>
-        <div class="dep-panel">
+        <div id="dept-5" class="dept-panel">
           <!-- human res -->
           <div class="department-container">
             <header class="department-main-header">😊 Human Resources</header>
@@ -337,9 +337,7 @@
           </div></div>
         </div>
 
-        <input name="dep-tab" type="radio" id="dep-6" class="input"/>
-        <label for="dep-6" class="label">Events</label>
-        <div class="dep-panel">
+        <div id="dept-6" class="dept-panel">
           <!-- events -->
           <div class="department-container">
             <header class="department-main-header">🎉 Events</header>
@@ -385,9 +383,7 @@
           </div></div>
         </div>
 
-        <input name="dep-tab" type="radio" id="dep-7" class="input"/>
-        <label for="dep-7" class="label">Finance</label>
-        <div class="dep-panel">
+        <div id="dept-7" class="dept-panel">
           <!-- fin -->
           <div class="department-container">
             <header class="department-main-header">💸 Finance</header>
@@ -449,17 +445,32 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="./scripts/smooth-scroll.polyfills.min.js"></script>
 
-<script type="text/javascript" src="./materialize/js/materialize.js"></script>
-
 <script type="text/javascript">
-var instance = M.Tabs.init(el, options);
+openDept(event, "dept-1")
+function openDept(evt, deptName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
 
-// Or with jQuery
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("dept-panel");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
 
-$(document).ready(function(){
-  $('.tabs').tabs();
-});
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("dept-tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
 
-      </script>
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(deptName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+<script>
+var mybtn = document.getElementsByClassName("dept-tablinks")[0];
+mybtn.click();
+</script>
 
 </html>

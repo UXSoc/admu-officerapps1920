@@ -94,17 +94,17 @@ text-align: center;
 letter-spacing: 0.05em;
 color: #8400c7; font-weight: bold; }
 
-.dep-tabs {
-  display: flex;
-  flex-wrap: wrap;
-width: 80%;
-margin-top: 20px;
-}
+/* Style the tab */
+.dept-tabs-flow {
+margin-top: 20px; margin-bottom: 20px; }
+.dept-tabs {
+  overflow: hidden;
+width: 80vw;
+text-align: center; }
 
-.dep-tabs input { opacity: 0; }
-
-.dep-tabs label {
-  font-family: Proxima Nova;
+/* Style the buttons that are used to open the tab content */
+.dept-tabs button {
+    font-family: Proxima Nova;
 font-weight: bold;
   font-size: 15px;
   margin-top: 10px;
@@ -112,44 +112,45 @@ font-weight: bold;
 letter-spacing: 0.05em;
   text-align: center;
   border: 1px solid #8400c7;
+  color: #8400c7;
   padding: 10px 15px;
   border-radius: 5px;
   text-decoration: none;
+margin-right: 10px;
 cursor: pointer;
 width: auto;
 transition: 0.3s all ease-in-out;
+background: transparent;
 }
-.dep1 { margin-left: -12px; }
 
-.dep-tabs label:hover{
+/* Change background color of buttons on hover */
+.dept-tabs button:hover {
   cursor: pointer;
   background-color: #8400c7;
   color: white;
   font-weight: bold;
 }
 
-
-.dep-tabs input:focus + .dep-tabs label {
-}
-
-.dep-tabs input:checked + label {
+/* Create an active/current tablink class */
+.dept-tabs button.active {
+  cursor: pointer;
   background-color: #8400c7;
   color: white;
   font-weight: bold;
 }
 
-.dep-panel {
-  opacity: 0;
-display: none;
-position: relative; z-index: 1;
-transition: 0.5s all ease-in-out;
-order: 99;
-padding: 0px;
+/* Style the tab content */
+.dept-panel {
+  display: none;
+width: 80%;
+  animation: fadeEffect 0.5s;
 }
 
-
-.dep-tabs input:checked + label + .dep-panel { display: block;
-position: relative; z-index: 5; opacity: 1; }
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
 
 
 .position {
@@ -274,6 +275,14 @@ font-size: 14px; color: #747474; line-height: 30px; letter-spacing: 0.05em;
   main h1 { text-align: left; width: 80%; margin-top: 30px; }
   .main__spiel { text-align: left; width: 80%;}
   main { padding-top: 25px; padding-bottom: 25px; }
+  .dept-tabs-flow { position: fixed; bottom: 0px; z-index: 10000;
+width: 100%; height: 60px; overflow-y: hidden; overflow-x: auto; margin: 0px;
+
+background: #FFFFFF;
+box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
+padding: 0px 10px;
+}
+.dept-tabs { width: 1100px; text-align: left; }
 }
 
 @media screen and (max-width: 420px) {
@@ -282,6 +291,7 @@ font-size: 14px; color: #747474; line-height: 30px; letter-spacing: 0.05em;
   .dep-tabs { width: 85%; }
   .main__spiel { width: 85%; }
   .department-info-card { padding: 20px; }
+
 }
 
 /* utility */
